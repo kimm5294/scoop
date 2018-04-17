@@ -44,8 +44,7 @@ const routes = {
   },
   '/comments/:id/downvote': {
     'PUT': downvoteComment
-  },
-  'load': loadDatabase
+  }
 };
 
 function getUser(url, request) {
@@ -435,7 +434,6 @@ const getRequestRoute = (url) => {
 }
 if (typeof loadDatabase === 'function' && !isTestMode) {
   const savedDatabase = loadDatabase();
-  console.log(savedDatabase)
   if (savedDatabase) {
     for (key in database) {
       database[key] = savedDatabase[key] || database[key];

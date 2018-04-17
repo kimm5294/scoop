@@ -84,7 +84,6 @@ describe('Scoop - server.js: ', function() {
         articleId: 1
       };
       routes['/comments']['POST']('/comments', {body: {comment: newComment}});
-      console.log(routes['load']())
 
       expect(database.comments[originalNextCommentId]).to.exist;
       expect(database.comments[originalNextCommentId]).to.be.an('object');
